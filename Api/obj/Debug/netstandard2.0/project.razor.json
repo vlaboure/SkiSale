@@ -1,0 +1,19 @@
+{
+  "FilePath": "f:\\Developpement disque F\\formations\\c#\\C# udemy\\.net_core_mvc\\cours_neil_cuming\\coreAngularApi_commerce\\skinet_vl\\Api\\Api.csproj",
+  "Configuration": {
+    "ConfigurationName": "MVC-3.0",
+    "LanguageVersion": "3.0",
+    "Extensions": [
+      {
+        "ExtensionName": "MVC-3.0"
+      }
+    ]
+  },
+  "ProjectWorkspaceState": {
+    "TagHelpers": [],
+    "CSharpLanguageVersion": 703
+  },
+  "RootNamespace": "Api",
+  "Documents": [],
+  "SerializationFormat": "0.2"
+}
