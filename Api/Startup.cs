@@ -6,6 +6,7 @@ using Microsoft.Extensions.Hosting;
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Core.Interfaces;
+using AutoMapper;
 
 namespace Api
 {
@@ -24,7 +25,8 @@ namespace Api
             //injection on scoped le repository est créé le temps de la requête
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-            services.AddControllers();
+            services.AddAutoMapper(typeof(Startup));//MappingProfiles
+            services.AddControllers();            
             services.AddDbContext<StoreContext>(opt =>
             {
                 opt.UseSqlite(_configuration.GetConnectionString("DefaultConnection"));
@@ -38,11 +40,12 @@ namespace Api
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseStatusCodePagesWithReExecute("/errors/{0}");
             app.UseHttpsRedirection();
 
             app.UseRouting();
-
+            // pour aller chercher les fichiers images sur le serveur
+            app.UseStaticFiles();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

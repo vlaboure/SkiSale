@@ -18,7 +18,7 @@ namespace Core.Specifications
         public Expression<Func<T, bool>> Criteria{get;}
 
         public List<Expression<Func<T, object>>> Includes{get;} = 
-        //valeur par déffaut
+        //valeur par defaut
             new List<Expression<Func<T, object>>>();
 
         protected void AddInclude ( Expression<Func<T, object>> includeExpression)

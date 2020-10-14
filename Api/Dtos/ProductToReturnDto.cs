@@ -1,0 +1,14 @@
+namespace Api.Dtos
+{
+    public class ProductToReturnDto
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public string PictureUrl { get; set; }
+        public decimal Price { get; set; }
+        //nécessaire pour la c'éation des tables par entity
+        public  string ProductType { get; set; }
+        public  string ProductBrand { get; set; }
+    }
+}

@@ -29,10 +29,13 @@ namespace Infrastructure.Data
 
         public async Task<T> GetEntityWithSpec(ISpecification<T> spec)
         {
+            //comme le compilateur ne connait pas produit à ce niveau, 
+            //le Repository étant générique, ApplySpecification récupère les paramètres 
+            //de la requête avec GetQuery dans SpecificationEvalutaion 
             return await ApplySpecification(spec).FirstOrDefaultAsync();
         }
 
-        public async Task<IReadOnlyList<T>> ListAsync(ISpecification<T> spec)
+        public async Task<IReadOnlyList<T>> ListAsyncWithSpec(ISpecification<T> spec)
         {
             return await ApplySpecification(spec).ToListAsync();
         }

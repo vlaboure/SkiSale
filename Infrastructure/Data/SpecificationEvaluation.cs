@@ -11,11 +11,15 @@ namespace Infrastructure.Data
          ISpecification<TEntity> specification)
         {
             var query = inputQuery;
-            if(specification != null)
+            //si on fait un get pour une valeur, Criteria contient l'id
+            //sinon Criteria est null
+            if(specification.Criteria != null)
             {
                 query = query.Where(specification.Criteria);
             }
+            //query -->IQueryable<TEntity> Iclude--> méthode de EntityFramework
             query = specification.Includes.Aggregate(query,(current, include)
+                //current--> 
                 =>current.Include(include));
             return query;    
         }
