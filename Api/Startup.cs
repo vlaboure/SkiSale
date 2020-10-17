@@ -7,6 +7,12 @@ using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Core.Interfaces;
 using AutoMapper;
+using Api.Middleware;
+using Microsoft.AspNetCore.Mvc;
+using System.Linq;
+using Api.Errors;
+using Microsoft.OpenApi.Models;
+using Api.Extensions;
 
 namespace Api
 {
@@ -22,24 +28,26 @@ namespace Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //injection on scoped le repository est créé le temps de la requête
-            services.AddScoped<IProductRepository, ProductRepository>();
-            services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+
             services.AddAutoMapper(typeof(Startup));//MappingProfiles
             services.AddControllers();            
             services.AddDbContext<StoreContext>(opt =>
             {
                 opt.UseSqlite(_configuration.GetConnectionString("DefaultConnection"));
             });
+            //Appel de la méthode statique de chargements de services ajoutés
+            services.AddApplicationServices();
+            services.AddSwaggerDocumentation();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
+            app.UseMiddleware<ExceptionMiddleware>();
+            // if (env.IsDevelopment())
+            // {
+            //     app.UseDeveloperExceptionPage();
+            // }
             app.UseStatusCodePagesWithReExecute("/errors/{0}");
             app.UseHttpsRedirection();
 
@@ -47,7 +55,7 @@ namespace Api
             // pour aller chercher les fichiers images sur le serveur
             app.UseStaticFiles();
             app.UseAuthorization();
-
+            app.UseSwaggerDocumentation();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

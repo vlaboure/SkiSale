@@ -1,10 +1,10 @@
 namespace Api.Errors
 {
-    public class ApiErrors
+    public class ApiResponse
     {
         public int StatusCode { get; set; }
         public string Message { get; set; }
-        public ApiErrors(int errorNum, string message = null)
+        public ApiResponse(int errorNum, string message = null)
         {
             StatusCode = errorNum;
             //si messge = null on lance GetMessageErrorFromErrorNum 

@@ -1,10 +1,12 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Api.Dtos;
+using Api.Errors;
 using AutoMapper;
 using Core.Entities;
 using Core.Interfaces;
 using Core.Specifications;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers
@@ -41,7 +43,11 @@ namespace Api.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task <ProductToReturnDto> GetProduct(int id)
+        // précise le type de réponse dans swagger
+        [ProducesResponseType(StatusCodes.Status200OK)]
+           // précise le type de réponse dans swagger pour l'erreur redirigée 
+        [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
+        public async Task <ActionResult<ProductToReturnDto>> GetProduct(int id)
         {
             //id--> specification passé à BaseSpecifiction avec base(x => x.Id == id)
             //dans ProductWithBrandAndTypeSpecification où on utilise la méthode 
@@ -50,6 +56,8 @@ namespace Api.Controllers
             //BaseSpecification<T> implémentant ISpecification<T>
             var spec = new ProductWithBrandAndTypeSpecification(id);
             var product = await _productRepo.GetEntityWithSpec(spec);
+            if(product == null)
+                return NotFound(new ApiResponse(404)); 
             return _mapper.Map<Product, ProductToReturnDto>(product);
         }
         [HttpGet("brands")]

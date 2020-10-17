@@ -5,6 +5,7 @@ using Core.Entities;
 
 namespace Api.Helpers
 {
+                        //IValueResolver<in TSource, in TDestination, TDestMember>
     public class ProductUrlResolver : IValueResolver<Product, ProductToReturnDto, string>
     {
         private readonly IConfiguration _config;

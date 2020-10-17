@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers
 {
+    // pour le test
     public class BuggyController : BaseApiController
     {
         // on fait appel direc au contexte et pas à un repo
@@ -18,7 +19,7 @@ namespace Api.Controllers
         {
             var response = _context.Products.Find(400);
             if(response == null)
-             return NotFound(new ApiErrors(400));
+             return NotFound(new ApiResponse(400));
             return Ok();
         }
 
