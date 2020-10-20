@@ -17,7 +17,15 @@ namespace Infrastructure.Data
             {
                 query = query.Where(specification.Criteria);
             }
-            //query -->IQueryable<TEntity> Iclude--> méthode de EntityFramework
+            if(specification.OrderBy != null)
+                query = query.OrderBy(specification.OrderBy);
+                           //query -->IQueryable<TEntity> Iclude--> méthode de EntityFramework
+
+            if(specification.OrderByDescending != null)
+                query = query.OrderByDescending(specification.OrderByDescending);
+                           //query -->IQueryable<TEntity> Iclude--> méthode de EntityFramework
+            if(specification.PaginationEnable)
+                query = query.Skip(specification.Skip).Take(specification.Take);
             query = specification.Includes.Aggregate(query,(current, include)
                 //current--> 
                 =>current.Include(include));

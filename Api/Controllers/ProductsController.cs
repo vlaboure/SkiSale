@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Api.Dtos;
 using Api.Errors;
+using Api.Helpers;
 using AutoMapper;
 using Core.Entities;
 using Core.Interfaces;
@@ -29,17 +30,19 @@ namespace Api.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IReadOnlyList<ProductToReturnDto>>> GetProducts()
+        public async Task<ActionResult<Pagination<ProductToReturnDto>>> GetProducts(
+            [FromQuery]ProductSpecParams specParams)
         {
-            var spec = new ProductWithBrandAndTypeSpecification();
+            var spec = new ProductWithBrandAndTypeSpecification(specParams);
+            var Countspec = new ProductFilterForCount(specParams);
+            var totalItem = await _productRepo.CountAsync(Countspec); //Countspec
+            // on récupère les specifications
+
             var products = await _productRepo.ListAsyncWithSpec(spec);   
-          //  var productsDto = _mapper.Map<IEnumerable<>>           
-            return Ok(_mapper.Map<IReadOnlyList<Product>,IReadOnlyList<ProductToReturnDto>>(products));
-        #region 
-        // ca marche tout aussi bien !!  
-          //return Ok(_mapper.Map<IReadOnlyList<ProductToReturnDto>>(products));
-        #endregion
-        
+          //  var productsDto = _mapper.Map<IEnumerable<>>  
+            var datas = _mapper.Map<IReadOnlyList<Product>,IReadOnlyList<ProductToReturnDto>>(products);         
+            return Ok(new Pagination<ProductToReturnDto>(specParams.PageIndex, 
+                specParams.ItemsPerPage,totalItem,datas));       
         }
 
         [HttpGet("{id}")]

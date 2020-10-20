@@ -7,10 +7,41 @@ namespace Core.Specifications
     public class ProductWithBrandAndTypeSpecification : BaseSpecification<Product>
     {
         // brand + type 
-        public ProductWithBrandAndTypeSpecification()
+        public ProductWithBrandAndTypeSpecification(ProductSpecParams specParams)
+            : base(x =>   
+        #region 
+                (string.IsNullOrEmpty(specParams.Search)||x.Name.ToLower()
+                    .Contains(specParams.Search))&&
+                (!specParams.BrandId.HasValue || x.ProductBrandId == specParams.BrandId)&&
+                (!specParams.TypeId.HasValue || x.ProductTypeId == specParams.TypeId)
+        #endregion
+            )
         {
             AddInclude(p => p.ProductBrand);
             AddInclude(p => p.ProductType);
+            AddOrderBy(p =>p.Name);
+//ApplyPagination(take,skip)
+            ApplyPagination(specParams.ItemsPerPage,
+                specParams.ItemsPerPage*(specParams.PageIndex-1));
+            if(!string.IsNullOrEmpty(specParams.Sort))
+            {
+
+                switch (specParams.Sort)
+                {
+                    case "priceAsc":
+                        AddOrderBy(p =>p.Price);
+                        break;
+
+                    case "priceDesc":
+                        AddOrderByDescending(p =>p.Price);
+                        break;
+
+                    default : 
+                        AddOrderBy(p =>p.Name);
+                        break;
+                }
+            }
+
         }
 
         // brand + type + id

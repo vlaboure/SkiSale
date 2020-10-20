@@ -38,6 +38,13 @@ namespace Api
             //Appel de la méthode statique de chargements de services ajoutés
             services.AddApplicationServices();
             services.AddSwaggerDocumentation();
+            services.AddCors(opt =>
+            {
+                opt.AddPolicy("corsPolicy", policy =>
+                {
+                    policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200");
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,6 +61,8 @@ namespace Api
             app.UseRouting();
             // pour aller chercher les fichiers images sur le serveur
             app.UseStaticFiles();
+
+            app.UseCors("corsPolicy");
             app.UseAuthorization();
             app.UseSwaggerDocumentation();
             app.UseEndpoints(endpoints =>
