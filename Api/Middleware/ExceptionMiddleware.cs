@@ -40,11 +40,11 @@ namespace Api.Middleware
                     // response contient le retour de l'erreur
                 var response = _env.IsDevelopment()//!!! pas d'affichage de deta
                 ? new ApiException((int)HttpStatusCode.InternalServerError, ex.Message, ex.StackTrace.ToString())
-                : new ApiResponse((int)HttpStatusCode.InternalServerError, ex.Message);
+                : new ApiException((int)HttpStatusCode.InternalServerError, ex.Message);
                     // on désire afficher en mode camelcase
                 var option = new JsonSerializerOptions{PropertyNamingPolicy=
                     JsonNamingPolicy.CamelCase};
-                var json = JsonSerializer.Serialize((ApiException)response, option);
+                var json = JsonSerializer.Serialize(response, option);
                 // ecriture de l'erreur en format json dans context 
                 await context.Response.WriteAsync(json);
             }

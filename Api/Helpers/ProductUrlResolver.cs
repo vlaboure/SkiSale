@@ -22,7 +22,8 @@ namespace Api.Helpers
             //si adresse image non vide
             if(!string.IsNullOrEmpty(source.PictureUrl))
             {
-                return _config["ApiUrl"] + source.PictureUrl;
+                var tt = _config["ApiUrl"] + source.PictureUrl;
+                return tt;
             }
             return null;
         }
