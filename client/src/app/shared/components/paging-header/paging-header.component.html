@@ -1,0 +1,23 @@
+<header>
+    <span *ngIf="totalCount && totalCount > 0">Liste des 
+        <strong>
+            {{ (pageIndex-1) * itemsPerPage+1}}
+        </strong> à 
+        <strong>
+            <!-- si la multiplication des paramètres de paginations est suppérieure
+            à la nombre d'articles fournis avec le filtre, on utilise le nombre
+            d'articles du filtre, sinon la multiplication page par articles par page -->
+            {{(pageIndex) * itemsPerPage
+                > totalCount ?
+                totalCount :
+                pageIndex * itemsPerPage
+            }}
+            
+        </strong>
+            articles  sur 
+        <strong>
+        {{totalCount}}
+        </strong>   
+    </span>
+    <span *ngIf="totalCount === 0">Il n'y a aucun article à afficher</span>
+</header>

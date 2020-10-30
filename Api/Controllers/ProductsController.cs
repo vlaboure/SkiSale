@@ -33,8 +33,10 @@ namespace Api.Controllers
         public async Task<ActionResult<Pagination<ProductToReturnDto>>> GetProducts(
             [FromQuery]ProductSpecParams specParams)
         {
+            // pour ajouter les spécifications marque/type
             var spec = new ProductWithBrandAndTypeSpecification(specParams);
             var Countspec = new ProductFilterForCount(specParams);
+            // pour récupérer la quantité réelle d'items
             var totalItem = await _productRepo.CountAsync(Countspec); //Countspec
             // on récupère les specifications
 

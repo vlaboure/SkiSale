@@ -31,7 +31,7 @@ namespace Infrastructure.Data
         {
             //comme le compilateur ne connait pas produit à ce niveau, 
             //le Repository étant générique, ApplySpecification récupère les paramètres 
-            //de la requête avec GetQuery dans SpecificationEvalutaion 
+            //de la requête avec GetQuery dans SpecificationEvaluation 
             return await ApplySpecification(spec).FirstOrDefaultAsync();
         }
 

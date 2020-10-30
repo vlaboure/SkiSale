@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { IBrand } from '../shared/models/brand';
 import { IPagination } from '../shared/models/pagination';
 import { IProduct } from '../shared/models/product';
+import { shopParams } from '../shared/models/shopParams';
 import { IType } from '../shared/models/type';
 import { ShopService } from './shop.service';
 
@@ -11,13 +12,18 @@ import { ShopService } from './shop.service';
   styleUrls: ['./shop.component.scss']
 })
 export class ShopComponent implements OnInit {
-
+  @ViewChild('search',{static: true})searchTerm: ElementRef;
   products: IProduct[];
   brands: IBrand[];
   types: IType[];
+  totalCount: number;
     // variables pour récupérer l'id si sélectionné
-  brandSelected: number;
-  typeSelected: number;
+  shopParams = new shopParams();
+  sortOptions = [
+    {name: 'Alphabetique', value: 'name'},
+    {name: 'Prix min-max', value: 'priceAsc'},
+    {name: 'Prix max-min', value: 'priceDesc'},
+  ]
 
   constructor(private shopService: ShopService) { }
 
@@ -28,8 +34,11 @@ export class ShopComponent implements OnInit {
   }
 
   getProducts(){
-    this.shopService.getProducts(this.brandSelected, this.typeSelected).subscribe(response => {
+    this.shopService.getProducts(this.shopParams).subscribe(response => {
       this.products = response.datas;
+      this.shopParams.pageIndex = response.pageIndex;
+      this.shopParams.itemsPerPage = response.itemsPerPage;
+      this.totalCount = response.count;
     }, error => {
       console.log(error);
     });
@@ -64,13 +73,48 @@ export class ShopComponent implements OnInit {
 
   onBrandIdSelected(brandId: number){
     // on renseigne le brandId et on lance getProducts
-    this.brandSelected = brandId;
+    this.shopParams.brandId = brandId;
+    this.shopParams.pageIndex = 1;
+    // this.shopParams.search = '';
+    // this.searchTerm.nativeElement.value = '';
     this.getProducts();
 
   }
   onTypeIdSelected(typeId: number){
     // on renseigne le brandId et on lance getProducts
-    this.brandSelected = typeId;
+    this.shopParams.typeId = typeId;
+    this.shopParams.pageIndex = 1;
+    // this.shopParams.search = '';
+    // this.searchTerm.nativeElement.value = '';
+    this.getProducts();
+  }
+  onSortSelected(sort: string){
+    this.shopParams.sort = sort;
+    this.getProducts(); 
+  }
+
+  onPageChange(event: any){
+      ////#region 
+        // on a sorti le paging et utilisé @Output pour l'event
+        // pagerComponent retourne donc une page et plus un event
+        // on remplace donc 
+        // this.shopParams.pageIndex = event.page par this.shopParams.pageIndex = event
+    ////#endregion
+    if (event !== this.shopParams.pageIndex){
+      this.shopParams.pageIndex = event;
+      this.getProducts();
+    }
+
+  }
+
+  onSearch(){
+    this.shopParams.search = this.searchTerm.nativeElement.value;
+    this.shopParams.pageIndex = 1;
+    this.getProducts();
+  }
+  onReset(){
+    this.searchTerm.nativeElement.value = '';
+    this.shopParams = new shopParams();
     this.getProducts();
   }
 }

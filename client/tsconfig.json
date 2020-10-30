@@ -16,5 +16,10 @@
       "es2018",
       "dom"
     ]
-  }
+  },
+  "references": [
+    {
+      "extends": "./tsconfig.base.json"
+    }
+  ]
 }

@@ -16,11 +16,12 @@ namespace Core.Specifications
                 (!specParams.TypeId.HasValue || x.ProductTypeId == specParams.TypeId)
         #endregion
             )
-        {
+        {   
+            // AddInclude de BaseSpecification ajoute la spécification à la liste
             AddInclude(p => p.ProductBrand);
             AddInclude(p => p.ProductType);
             AddOrderBy(p =>p.Name);
-//ApplyPagination(take,skip)
+//ApplyPagination(take,skip)-->page 1: take 6 skip 0 
             ApplyPagination(specParams.ItemsPerPage,
                 specParams.ItemsPerPage*(specParams.PageIndex-1));
             if(!string.IsNullOrEmpty(specParams.Sort))
