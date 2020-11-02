@@ -12,7 +12,7 @@ import { ShopService } from './shop.service';
   styleUrls: ['./shop.component.scss']
 })
 export class ShopComponent implements OnInit {
-  @ViewChild('search',{static: true})searchTerm: ElementRef;
+  @ViewChild('search', {static: true})searchTerm: ElementRef;
   products: IProduct[];
   brands: IBrand[];
   types: IType[];
@@ -23,7 +23,7 @@ export class ShopComponent implements OnInit {
     {name: 'Alphabetique', value: 'name'},
     {name: 'Prix min-max', value: 'priceAsc'},
     {name: 'Prix max-min', value: 'priceDesc'},
-  ]
+  ];
 
   constructor(private shopService: ShopService) { }
 
@@ -90,14 +90,14 @@ export class ShopComponent implements OnInit {
   }
   onSortSelected(sort: string){
     this.shopParams.sort = sort;
-    this.getProducts(); 
+    this.getProducts();
   }
 
   onPageChange(event: any){
-      ////#region 
+      ////#region
         // on a sorti le paging et utilisé @Output pour l'event
         // pagerComponent retourne donc une page et plus un event
-        // on remplace donc 
+        // on remplace donc
         // this.shopParams.pageIndex = event.page par this.shopParams.pageIndex = event
     ////#endregion
     if (event !== this.shopParams.pageIndex){

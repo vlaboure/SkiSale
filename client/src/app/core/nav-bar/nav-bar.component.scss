@@ -11,3 +11,19 @@
     top: -20px;
     right: 30px;
 }
+a{
+    text-decoration: none;
+    color: #343a40;
+    // pour ne pas retaper a.active
+    &.active{
+        color:orange;
+    }
+}
+
+.logo{
+    cursor: pointer;
+// pour ne pas retaper .logo:focus
+    &:focus{
+        outline:none;
+    }
+}

@@ -1,13 +1,14 @@
 <div class="d-flex flex-column justify-content-between flex-md-row align-items-center
   p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm ">
-  <img src="/assets/images/logo-ski.png" style= "max-height: 70px;" alt="logo">
+  <img src="/assets/images/logo-ski.png" style= "max-height: 70px;" routerLink="/" 
+    class="logo" alt="logo">
   <!-- <h5 class="my-0 mr-md-auto font-weight-normal position-absolute"></h5> -->
   <div class="my-0 mr-md-auto position-absolute"></div>
     <nav class="my-2 my-md-0 mr-md-3 text-uppercase " style="font-size: larger;">
-      <a class="p-2 text-dark" href="#">Features</a>
-      <a class="p-2 text-dark" href="#">Enterprise</a>
-      <a class="p-2 text-dark" href="#">Support</a>
-      <a class="p-2 text-dark" href="#">Pricing</a>
+      <a class="p-2" [routerLink]="['/']" routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact:true}">Accueil</a>
+      <a class="p-2" routerLink="/shop" routerLinkActive="active">Produits</a>
+      <a class="p-2" href="#" >Contact</a>
     </nav>
 
 
