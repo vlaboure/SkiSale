@@ -5,7 +5,9 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 
 const routes: Routes = [
   {path: '', component: ShopComponent},
-  {path: ':id', component: ProductDetailComponent},
+  // on ajoute un alias qui sera utilisé dans shop-detail pour le nom produit
+        // data transmis --> tableau clé valeur
+  {path: ':id', component: ProductDetailComponent, data: {breadcrumb: { alias: 'productDetails'}}},
 ]
 
 @NgModule({

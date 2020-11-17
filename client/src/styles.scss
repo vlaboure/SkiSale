@@ -3,3 +3,13 @@
 @import '../node_modules/bootstrap/dist/css/bootstrap-grid.min.css';
 @import '../node_modules/bootstrap/dist/css/bootstrap-grid.min.css';
 @import '../node_modules/font-awesome/css/font-awesome.min.css';
+
+.xng-breadcrumb-root{
+    padding: 8px 16px;
+    display: inline;
+    border-radius: 0;
+}
+label.xng-breadcrumb-trail{
+    color: orange;
+    margin-bottom: 0;
+}

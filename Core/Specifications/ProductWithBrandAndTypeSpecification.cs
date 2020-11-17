@@ -1,7 +1,13 @@
 using System;
 using System.Linq.Expressions;
 using Core.Entities;
-
+ 
+ #region
+ /*
+ ***** classe pour gérer les filtres marques et types
+ */
+ #endregion
+ 
 namespace Core.Specifications
 {
     public class ProductWithBrandAndTypeSpecification : BaseSpecification<Product>

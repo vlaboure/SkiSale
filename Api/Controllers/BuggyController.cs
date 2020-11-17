@@ -19,7 +19,7 @@ namespace Api.Controllers
         {
             var response = _context.Products.Find(400);
             if(response == null)
-             return NotFound(new ApiResponse(400));
+             return NotFound(new ApiResponse(404));
             return Ok();
         }
 
@@ -34,7 +34,7 @@ namespace Api.Controllers
         [HttpGet("badrequest")]
         public ActionResult GetBadRequest()
         {
-            return BadRequest();        
+            return BadRequest(new ApiResponse(400));        
         }
 
         [HttpGet("badrequest/{id}")]

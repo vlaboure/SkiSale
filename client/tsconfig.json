@@ -17,6 +17,10 @@
       "dom"
     ]
   },
+  "angularCompilerOptions": {
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true
+  },
   "references": [
     {
       "extends": "./tsconfig.base.json"

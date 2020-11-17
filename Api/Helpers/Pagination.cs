@@ -10,7 +10,7 @@ namespace Api.Helpers
             PageIndex = pageIndex;
             ItemsPerPage = itemsPerPage;
             Count = count;// nb total d'items
-            Datas = datas;
+            Datas = datas;//liste générique
         }
 
         public int PageIndex { get; set; }

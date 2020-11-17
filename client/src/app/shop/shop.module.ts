@@ -4,7 +4,6 @@ import { ShopComponent } from './shop.component';
 import { ProductItemComponent } from './product-item/product-item.component';
 import { SharedModule } from '../shared/shared.module';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
-import { Router, RouterModule } from '@angular/router';
 import { ShopRoutingModule } from './shop-routing.module';
 
 

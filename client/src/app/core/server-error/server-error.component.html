@@ -1,0 +1,16 @@
+<div class="container mt-5">
+    <h4>Erreur interne du serveur</h4>
+    <ng-container *ngIf="error">    
+        <h5 class="text-danger">erreur : {{error.message}} </h5>
+        <p class="text-font-weight-bold"></p>
+        <ol>
+            <li>cherchez dans google dev tools</li>
+            <li>Y regarder ce qui est affiché dans l'onglet network</li>
+            <li>Cherchez les erreurs sur les requêtes</li>
+            <li>Reproduire l'erreur dans Postman - si l'erreur est la même, le problème ne vient pas d'angular</li>
+        </ol>
+        <p>Détail des messages retournés :</p>
+        <code class="mt-5" style="background-color: azure;"> {{error.detail}} </code>
+    </ng-container>    
+</div>
+
