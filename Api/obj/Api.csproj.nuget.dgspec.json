@@ -196,6 +196,10 @@
               "target": "Package",
               "version": "[2.0.3, )",
               "autoReferenced": true
+            },
+            "StackExchange.Redis": {
+              "target": "Package",
+              "version": "[2.2.4, )"
             }
           },
           "imports": [

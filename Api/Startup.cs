@@ -13,6 +13,7 @@ using System.Linq;
 using Api.Errors;
 using Microsoft.OpenApi.Models;
 using Api.Extensions;
+using StackExchange.Redis;
 
 namespace Api
 {
@@ -36,6 +37,10 @@ namespace Api
                 opt.UseSqlite(_configuration.GetConnectionString("DefaultConnection"));
             });
             //Appel de la méthode statique de chargements de services ajoutés
+            services.AddSingleton<IConnectionMultiplexer>(c => {
+                var config = ConfigurationOptions.Parse(_configuration.GetConnectionString("Redis"),true);
+                return ConnectionMultiplexer.Connect(config);
+            });
             services.AddApplicationServices();
             services.AddSwaggerDocumentation();
             services.AddCors(opt =>

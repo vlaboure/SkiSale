@@ -11,10 +11,19 @@ namespace Api.Extensions
 {
     public static class ApplicationServicesExtension
     {
+        #region 
+        /*
+        **
+        *   AdApplciationServices est injecté dans startup
+        **
+        */
+        #endregion
+
         public static IServiceCollection AddApplicationServices(this IServiceCollection services)
         {
-                    //injection on scoped le repository est créé le temps de la requête
+                    //injection en scoped le repository est créé le temps de la requête
             services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<IBasketRepository, BasketRepository>();
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
                  //on configure le comportement pour passer dans ApiValidationError
             services.Configure<ApiBehaviorOptions>(options =>

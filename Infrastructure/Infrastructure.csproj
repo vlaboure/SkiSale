@@ -3,6 +3,7 @@
     <ProjectReference Include="..\core\Core.csproj"/>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.5"/>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.5"/>
+    <PackageReference Include="StackExchange.Redis" Version="2.2.4"/>
   </ItemGroup>
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
