@@ -20,6 +20,7 @@ namespace Infrastructure.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            // appel à la factory ProductionConfiguration
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
             if(Database.ProviderName == "Microsoft.EntityFrameworkCore.Sqlite")
             {

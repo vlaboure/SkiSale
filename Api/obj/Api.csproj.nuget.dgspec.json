@@ -49,6 +49,10 @@
               "target": "Package",
               "version": "[8.0.1, )"
             },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[3.1.10, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "target": "Package",
               "version": "[3.1.8, )"
@@ -84,14 +88,14 @@
         }
       }
     },
-    "F:\\Developpement disque F\\formations\\c#\\C# udemy\\.net_core_mvc\\cours_neil_cuming\\coreAngularApi_commerce\\skinet_vl\\core\\Core.csproj": {
+    "F:\\Developpement disque F\\formations\\c#\\C# udemy\\.net_core_mvc\\cours_neil_cuming\\coreAngularApi_commerce\\skinet_vl\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Developpement disque F\\formations\\c#\\C# udemy\\.net_core_mvc\\cours_neil_cuming\\coreAngularApi_commerce\\skinet_vl\\core\\Core.csproj",
+        "projectUniqueName": "F:\\Developpement disque F\\formations\\c#\\C# udemy\\.net_core_mvc\\cours_neil_cuming\\coreAngularApi_commerce\\skinet_vl\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "F:\\Developpement disque F\\formations\\c#\\C# udemy\\.net_core_mvc\\cours_neil_cuming\\coreAngularApi_commerce\\skinet_vl\\core\\Core.csproj",
+        "projectPath": "F:\\Developpement disque F\\formations\\c#\\C# udemy\\.net_core_mvc\\cours_neil_cuming\\coreAngularApi_commerce\\skinet_vl\\Core\\Core.csproj",
         "packagesPath": "C:\\Users\\vincent.vincent-PC\\.nuget\\packages\\",
-        "outputPath": "F:\\Developpement disque F\\formations\\c#\\C# udemy\\.net_core_mvc\\cours_neil_cuming\\coreAngularApi_commerce\\skinet_vl\\core\\obj\\",
+        "outputPath": "F:\\Developpement disque F\\formations\\c#\\C# udemy\\.net_core_mvc\\cours_neil_cuming\\coreAngularApi_commerce\\skinet_vl\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -101,14 +105,14 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netstandard2.0"
+          "netstandard2.1"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netstandard2.0": {
+          "netstandard2.1": {
             "projectReferences": {}
           }
         },
@@ -119,13 +123,11 @@
         }
       },
       "frameworks": {
-        "netstandard2.0": {
+        "netstandard2.1": {
           "dependencies": {
-            "NETStandard.Library": {
-              "suppressParent": "All",
+            "Microsoft.Extensions.Identity.Stores": {
               "target": "Package",
-              "version": "[2.0.3, )",
-              "autoReferenced": true
+              "version": "[3.1.10, )"
             }
           },
           "imports": [
@@ -138,6 +140,11 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
@@ -159,17 +166,17 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netstandard2.0"
+          "netstandard2.1"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netstandard2.0": {
+          "netstandard2.1": {
             "projectReferences": {
-              "F:\\Developpement disque F\\formations\\c#\\C# udemy\\.net_core_mvc\\cours_neil_cuming\\coreAngularApi_commerce\\skinet_vl\\core\\Core.csproj": {
-                "projectPath": "F:\\Developpement disque F\\formations\\c#\\C# udemy\\.net_core_mvc\\cours_neil_cuming\\coreAngularApi_commerce\\skinet_vl\\core\\Core.csproj"
+              "F:\\Developpement disque F\\formations\\c#\\C# udemy\\.net_core_mvc\\cours_neil_cuming\\coreAngularApi_commerce\\skinet_vl\\Core\\Core.csproj": {
+                "projectPath": "F:\\Developpement disque F\\formations\\c#\\C# udemy\\.net_core_mvc\\cours_neil_cuming\\coreAngularApi_commerce\\skinet_vl\\Core\\Core.csproj"
               }
             }
           }
@@ -181,8 +188,16 @@
         }
       },
       "frameworks": {
-        "netstandard2.0": {
+        "netstandard2.1": {
           "dependencies": {
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.5, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.1.5, )"
@@ -191,15 +206,17 @@
               "target": "Package",
               "version": "[3.1.5, )"
             },
-            "NETStandard.Library": {
-              "suppressParent": "All",
+            "Microsoft.IdentityModel.Tokens": {
               "target": "Package",
-              "version": "[2.0.3, )",
-              "autoReferenced": true
+              "version": "[6.8.0, )"
             },
             "StackExchange.Redis": {
               "target": "Package",
               "version": "[2.2.4, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.8.0, )"
             }
           },
           "imports": [
@@ -212,6 +229,11 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }

@@ -7,6 +7,7 @@ import { IType } from '../shared/models/type';
 import { map } from 'rxjs/operators';
 import { shopParams } from '../shared/models/shopParams';
 import { environment } from 'src/environments/environment';
+import { of } from 'rxjs';
 
 
 @Injectable({
@@ -14,6 +15,7 @@ import { environment } from 'src/environments/environment';
 })
 export class ShopService {
   baseUrl = environment.apiUrl;
+  products: IProduct[]=[];
   constructor(private http: HttpClient) { }
 
 
@@ -48,7 +50,17 @@ export class ShopService {
     return this.http.get<IType[]>(this.baseUrl + 'products/types');
   }
   // dans le cours getProduct(id: number)
-  getProduct(id: string){
-    return this.http.get<IProduct>(`${this.baseUrl}products/${id}`);
+  getProduct(id: number){
+    // tslint:disable-next-line: no-debugger
+    const product = this.products.find(p => p.id === id);
+    if(product){
+      return of(product);
+    }
+    // tslint:disable-next-line: no-debugger
+//   debugger;
+    const tp=this.http.get<IProduct>(`${this.baseUrl}products/${id}`);
+    console.log(tp);
+    return tp;
+   
   }
 }

@@ -16,7 +16,9 @@ const routes: Routes = [
   then(m => m.ShopModule), data:{breadcrub:'Shop'}},
   {path: 'basket', loadChildren: () => import('./basket/basket.module').
   then(m => m.BasketModule), data:{breadcrub:'basket'}},
-  {path: '**', redirectTo: 'not-found', pathMatch: 'full'}
+  {path: 'checkout', loadChildren: () => import('./checkout/checkout.module').
+  then(m => m.CheckoutModule),data: { breadcrub: 'checkout'}},
+  {path: '**', redirectTo: 'not-found', pathMatch: 'full'},
 ];
 
 @NgModule({

@@ -1,0 +1,7 @@
+F:\Developpement disque F\formations\c#\C# udemy\.net_core_mvc\cours_neil_cuming\coreAngularApi_commerce\skinet_vl\core\bin\Debug\netstandard2\Core.deps.json
+F:\Developpement disque F\formations\c#\C# udemy\.net_core_mvc\cours_neil_cuming\coreAngularApi_commerce\skinet_vl\core\bin\Debug\netstandard2\Core.dll
+F:\Developpement disque F\formations\c#\C# udemy\.net_core_mvc\cours_neil_cuming\coreAngularApi_commerce\skinet_vl\core\bin\Debug\netstandard2\Core.pdb
+F:\Developpement disque F\formations\c#\C# udemy\.net_core_mvc\cours_neil_cuming\coreAngularApi_commerce\skinet_vl\core\obj\Debug\netstandard2\Core.AssemblyInfoInputs.cache
+F:\Developpement disque F\formations\c#\C# udemy\.net_core_mvc\cours_neil_cuming\coreAngularApi_commerce\skinet_vl\core\obj\Debug\netstandard2\Core.AssemblyInfo.cs
+F:\Developpement disque F\formations\c#\C# udemy\.net_core_mvc\cours_neil_cuming\coreAngularApi_commerce\skinet_vl\core\obj\Debug\netstandard2\Core.dll
+F:\Developpement disque F\formations\c#\C# udemy\.net_core_mvc\cours_neil_cuming\coreAngularApi_commerce\skinet_vl\core\obj\Debug\netstandard2\Core.pdb

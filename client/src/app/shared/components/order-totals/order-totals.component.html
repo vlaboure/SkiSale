@@ -1,0 +1,23 @@
+<div class="bg-light px-4 py-3 text-uppercase font-weight-bold">
+    Total pannier
+</div>
+<div class="p-4">
+    <p class="font-italic mb-4">
+        Les frais de ports sont calculés en fonction de vos choix de 
+        livraison
+    </p>
+    <ul class="list-unstyled mb-4" *ngIf="(totalBasket$ | async) as totals">
+        <li class="d-flex justify-content-between py-3 border-bottom">
+            <strong class="text-muted">Sous total</strong>
+            <strong> {{totals.subTotal | currency:"EUR"}} </strong>  
+        </li>
+        <li class="d-flex justify-content-between py-3 border-bottom">
+            <strong class="text-muted">frais de ports</strong>
+            <strong> {{totals.shiping | currency:"EUR"}} </strong>  
+        </li>
+        <li class="d-flex justify-content-between py-3 border-bottom">
+            <strong class="text-muted">Total</strong>
+            <strong> {{totals.total | currency:"EUR"}} </strong>  
+        </li>
+    </ul>
+</div>

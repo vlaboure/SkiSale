@@ -14,6 +14,7 @@ using Api.Errors;
 using Microsoft.OpenApi.Models;
 using Api.Extensions;
 using StackExchange.Redis;
+using Infrastructure.Identity;
 
 namespace Api
 {
@@ -35,6 +36,10 @@ namespace Api
             services.AddDbContext<StoreContext>(opt =>
             {
                 opt.UseSqlite(_configuration.GetConnectionString("DefaultConnection"));
+            });
+            services.AddDbContext<AppIdentityDbContext>(opt =>
+            {
+                opt.UseSqlite(_configuration.GetConnectionString("IdentityConnection"));
             });
             //Appel de la méthode statique de chargements de services ajoutés
             services.AddSingleton<IConnectionMultiplexer>(c => {
