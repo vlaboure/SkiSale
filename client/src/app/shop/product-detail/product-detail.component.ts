@@ -33,10 +33,10 @@ export class ProductDetailComponent implements OnInit {
     this.shopService.getProduct(+(this.activateRoute.snapshot.paramMap.get('id'))).subscribe((response) =>
     {
       this.product = response;
-      // console.log(this.product.description+' component -- product')
-      // console.log(this.product.name+' component -- product')
-      // console.log(this.product.price+' component -- product')
-      // console.log(this.product.pictureUrl+' component -- product')
+      console.log(this.product.description+' getproduct -- description')
+      console.log(this.product.name+' getproduct -- name')
+      console.log(this.product.price+'getproduct -- price')
+      console.log(this.product.pictureUrl+' getproduct -- picture')
       //ici on récupère le nom qu'on met dans alias
       // tableau clé valeur
       this.breadcrumbService.set('@productDetails', response.name)

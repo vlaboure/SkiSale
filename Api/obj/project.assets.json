@@ -6287,8 +6287,8 @@
     },
     "Core/1.0.0": {
       "type": "project",
-      "path": "../Core/Core.csproj",
-      "msbuildProject": "../Core/Core.csproj"
+      "path": "../core/Core.csproj",
+      "msbuildProject": "../core/Core.csproj"
     },
     "Infrastructure/1.0.0": {
       "type": "project",

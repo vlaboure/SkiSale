@@ -99,7 +99,10 @@ F:\Developpement disque F\formations\c#\C# udemy\.net_core_mvc\cours_neil_cuming
 F:\Developpement disque F\formations\c#\C# udemy\.net_core_mvc\cours_neil_cuming\coreAngularApi_commerce\skinet_vl\Api\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 F:\Developpement disque F\formations\c#\C# udemy\.net_core_mvc\cours_neil_cuming\coreAngularApi_commerce\skinet_vl\Api\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
 F:\Developpement disque F\formations\c#\C# udemy\.net_core_mvc\cours_neil_cuming\coreAngularApi_commerce\skinet_vl\Api\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
-F:\Developpement disque F\formations\c#\C# udemy\.net_core_mvc\cours_neil_cuming\coreAngularApi_commerce\skinet_vl\Api\bin\Debug\netcoreapp3.1\System.ComponentModel.Annotations.dll
 F:\Developpement disque F\formations\c#\C# udemy\.net_core_mvc\cours_neil_cuming\coreAngularApi_commerce\skinet_vl\Api\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
 F:\Developpement disque F\formations\c#\C# udemy\.net_core_mvc\cours_neil_cuming\coreAngularApi_commerce\skinet_vl\Api\bin\Debug\netcoreapp3.1\System.Security.Cryptography.Pkcs.dll
 F:\Developpement disque F\formations\c#\C# udemy\.net_core_mvc\cours_neil_cuming\coreAngularApi_commerce\skinet_vl\Api\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Security.Cryptography.Pkcs.dll
+F:\Developpement disque F\formations\c#\C# udemy\.net_core_mvc\cours_neil_cuming\coreAngularApi_commerce\skinet_vl\Api\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+F:\Developpement disque F\formations\c#\C# udemy\.net_core_mvc\cours_neil_cuming\coreAngularApi_commerce\skinet_vl\Api\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+F:\Developpement disque F\formations\c#\C# udemy\.net_core_mvc\cours_neil_cuming\coreAngularApi_commerce\skinet_vl\Api\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+F:\Developpement disque F\formations\c#\C# udemy\.net_core_mvc\cours_neil_cuming\coreAngularApi_commerce\skinet_vl\Api\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll

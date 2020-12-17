@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Developpement disque F\\formations\\c#\\C# udemy\\.net_core_mvc\\cours_neil_cuming\\coreAngularApi_commerce\\skinet_vl\\Core\\Core.csproj": {}
+    "F:\\Developpement disque F\\formations\\c#\\C# udemy\\.net_core_mvc\\cours_neil_cuming\\coreAngularApi_commerce\\skinet_vl\\core\\Core.csproj": {}
   },
   "projects": {
-    "F:\\Developpement disque F\\formations\\c#\\C# udemy\\.net_core_mvc\\cours_neil_cuming\\coreAngularApi_commerce\\skinet_vl\\Core\\Core.csproj": {
+    "F:\\Developpement disque F\\formations\\c#\\C# udemy\\.net_core_mvc\\cours_neil_cuming\\coreAngularApi_commerce\\skinet_vl\\core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Developpement disque F\\formations\\c#\\C# udemy\\.net_core_mvc\\cours_neil_cuming\\coreAngularApi_commerce\\skinet_vl\\Core\\Core.csproj",
+        "projectUniqueName": "F:\\Developpement disque F\\formations\\c#\\C# udemy\\.net_core_mvc\\cours_neil_cuming\\coreAngularApi_commerce\\skinet_vl\\core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "F:\\Developpement disque F\\formations\\c#\\C# udemy\\.net_core_mvc\\cours_neil_cuming\\coreAngularApi_commerce\\skinet_vl\\Core\\Core.csproj",
+        "projectPath": "F:\\Developpement disque F\\formations\\c#\\C# udemy\\.net_core_mvc\\cours_neil_cuming\\coreAngularApi_commerce\\skinet_vl\\core\\Core.csproj",
         "packagesPath": "C:\\Users\\vincent.vincent-PC\\.nuget\\packages\\",
-        "outputPath": "F:\\Developpement disque F\\formations\\c#\\C# udemy\\.net_core_mvc\\cours_neil_cuming\\coreAngularApi_commerce\\skinet_vl\\Core\\obj\\",
+        "outputPath": "F:\\Developpement disque F\\formations\\c#\\C# udemy\\.net_core_mvc\\cours_neil_cuming\\coreAngularApi_commerce\\skinet_vl\\core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

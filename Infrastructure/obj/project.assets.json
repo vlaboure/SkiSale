@@ -2711,8 +2711,8 @@
     },
     "Core/1.0.0": {
       "type": "project",
-      "path": "../Core/Core.csproj",
-      "msbuildProject": "../Core/Core.csproj"
+      "path": "../core/Core.csproj",
+      "msbuildProject": "../core/Core.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -2757,8 +2757,8 @@
       "frameworks": {
         "netstandard2.1": {
           "projectReferences": {
-            "F:\\Developpement disque F\\formations\\c#\\C# udemy\\.net_core_mvc\\cours_neil_cuming\\coreAngularApi_commerce\\skinet_vl\\Core\\Core.csproj": {
-              "projectPath": "F:\\Developpement disque F\\formations\\c#\\C# udemy\\.net_core_mvc\\cours_neil_cuming\\coreAngularApi_commerce\\skinet_vl\\Core\\Core.csproj"
+            "F:\\Developpement disque F\\formations\\c#\\C# udemy\\.net_core_mvc\\cours_neil_cuming\\coreAngularApi_commerce\\skinet_vl\\core\\Core.csproj": {
+              "projectPath": "F:\\Developpement disque F\\formations\\c#\\C# udemy\\.net_core_mvc\\cours_neil_cuming\\coreAngularApi_commerce\\skinet_vl\\core\\Core.csproj"
             }
           }
         }

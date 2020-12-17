@@ -37,6 +37,7 @@ namespace Api
             {
                 opt.UseSqlite(_configuration.GetConnectionString("DefaultConnection"));
             });
+            
             services.AddDbContext<AppIdentityDbContext>(opt =>
             {
                 opt.UseSqlite(_configuration.GetConnectionString("IdentityConnection"));

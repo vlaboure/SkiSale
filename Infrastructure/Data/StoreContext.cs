@@ -10,7 +10,7 @@ namespace Infrastructure.Data
     {
         //Contient les listes donnant accés aux tables
         // et les fonctions d'agrégation
-        public StoreContext(DbContextOptions options) : base(options)
+        public StoreContext(DbContextOptions<StoreContext> options) : base(options)
         {
         }
 
