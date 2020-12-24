@@ -6,6 +6,6 @@ namespace Core.Entities.Identity
     {
         //une adresse par personne
         public string DisplayName { get; set; }
-        public Adress Adress { get; set; }                                
+        public Address Address { get; set; }                                
     }
 }

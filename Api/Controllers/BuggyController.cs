@@ -1,5 +1,6 @@
 using Api.Errors;
 using Infrastructure.Data;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers
@@ -13,6 +14,14 @@ namespace Api.Controllers
         {
             _context = context;
         }
+
+        [HttpGet("testAuth")]
+        [Authorize]
+        public ActionResult<string> test()
+        {
+            return "test ok";
+        }
+
         // provocation des codes erreur 
         [HttpGet("notfound")]
         public ActionResult GetNotFound()

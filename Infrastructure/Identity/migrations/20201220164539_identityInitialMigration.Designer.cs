@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Identity.migrations
 {
     [DbContext(typeof(AppIdentityDbContext))]
-    [Migration("20201213094125_identityInitialMigration")]
+    [Migration("20201220164539_identityInitialMigration")]
     partial class identityInitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -18,14 +18,13 @@ namespace Infrastructure.Identity.migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "3.1.8");
 
-            modelBuilder.Entity("Core.Entities.Identity.Adress", b =>
+            modelBuilder.Entity("Core.Entities.Identity.Address", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("AppUserId")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("City")
@@ -51,7 +50,7 @@ namespace Infrastructure.Identity.migrations
                     b.HasIndex("AppUserId")
                         .IsUnique();
 
-                    b.ToTable("Adress");
+                    b.ToTable("Address");
                 });
 
             modelBuilder.Entity("Core.Entities.Identity.AppUser", b =>
@@ -249,13 +248,11 @@ namespace Infrastructure.Identity.migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("Core.Entities.Identity.Adress", b =>
+            modelBuilder.Entity("Core.Entities.Identity.Address", b =>
                 {
                     b.HasOne("Core.Entities.Identity.AppUser", "AppUser")
-                        .WithOne("Adress")
-                        .HasForeignKey("Core.Entities.Identity.Adress", "AppUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .WithOne("Address")
+                        .HasForeignKey("Core.Entities.Identity.Address", "AppUserId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

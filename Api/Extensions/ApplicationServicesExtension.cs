@@ -2,6 +2,7 @@ using System.Linq;
 using Api.Errors;
 using Core.Interfaces;
 using Infrastructure.Data;
+using Infrastructure.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
@@ -21,7 +22,9 @@ namespace Api.Extensions
 
         public static IServiceCollection AddApplicationServices(this IServiceCollection services)
         {
-                    //injection en scoped le repository est créé le temps de la requête
+            //injection en scoped le repository est créé le temps de la requête
+            //AddScoped --> injection de dépendance
+            services.AddScoped<ITokenService, TokenService>();
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<IBasketRepository, BasketRepository>();
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));

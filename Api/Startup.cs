@@ -47,7 +47,10 @@ namespace Api
                 var config = ConfigurationOptions.Parse(_configuration.GetConnectionString("Redis"),true);
                 return ConnectionMultiplexer.Connect(config);
             });
+            //injection repository, token, gestion erreur (buggy ctrl/ErrorResponse)
             services.AddApplicationServices();
+            //injection de Identity avec les classes adress et AppUser avec pamètrage du token
+            services.AddIdentityService(_configuration  );
             services.AddSwaggerDocumentation();
             services.AddCors(opt =>
             {
@@ -74,6 +77,7 @@ namespace Api
             app.UseStaticFiles();
 
             app.UseCors("corsPolicy");
+            app.UseAuthentication();
             app.UseAuthorization();
             app.UseSwaggerDocumentation();
             app.UseEndpoints(endpoints =>
